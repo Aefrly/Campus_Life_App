@@ -14,5 +14,8 @@ function showSlide(n) {
     if (n > slides.length) { slideIndex = 1; }
     if (n < 1) { slideIndex = slides.length; }
     slides.forEach(slide => slide.classList.remove('active'));
-    slides[slideIndex - 1].classList.add('active');
+    const activeSlide = slides[slideIndex - 1];
+    activeSlide.classList.add('active');
+    activeSlide.classList.remove('fade');
+    void activeSlide.offsetWidth; // Trigger reflow
 }
