@@ -6,6 +6,12 @@ body {
 * {
     font-family: 'Times New Roman';
 }
+/*Style my image on map.html*/
+img {
+    width: 50%;
+    display: block;
+    margin: auto;
+}
 
 /*Styling for buttons*/
 .btn {
