@@ -12,6 +12,10 @@ body {
     background-color: blue;
 }
 
+.btn:hover {
+    background-color: darkblue;
+}
+
 /*Styling the slideshow*/
 .slideshow-container {
     position: relative;
