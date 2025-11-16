@@ -23,7 +23,7 @@ function showSlide(n) {
 //JavaScript for API on weather information 
 //Sending API requests using async/await
 async function getWeatherInfo() {
-  const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=89be7347dc28111fd85e4f4987994e48");
+  const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=39.73&lon=-90.23&exclude=minutely,hourly,daily,alerts&appid=89be7347dc28111fd85e4f4987994e48");
   const data = await response.json();
   
   //Retrieve data from API
