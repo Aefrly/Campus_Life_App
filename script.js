@@ -20,32 +20,23 @@ function showSlide(n) {
     void activeSlide.offsetWidth; // Trigger reflow
 }
 
-//JavaScript for API on weather information 
+//JavaScript for API on map information 
 //Sending API requests using async/await
-async function getWeatherInfo() {
-  const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=39.73&lon=-90.23&exclude=minutely,hourly,daily,alerts&appid=89be7347dc28111fd85e4f4987994e48");
-  const data = await response.json();
-  
-  //Retrieve data from API
-  const temp = data.current.temp;
-  const description = data.current.weather[0].description;
-  const humidity = data.current.humidity;
-  const windSpeed = data.current.wind_speed;
+async function InteractiveMap() {
+    //School's location coordinates
+    const location = {lat: 39.732189, lng: -90.2495076};
 
-  // Update the DOM with weather info
-    const output = document.getElementById("weather-container"); 
-    output.innerHTML = `
-      <div class="col-12 text-center">
-        <h3>Jacksonville, IL Weather</h3>
-        <p><strong>Temperature:</strong> ${temp}°C</p>
-        <p><strong>Condition:</strong> ${description}</p>
-        <p><strong>Humidity:</strong> ${humidity}%</p>
-        <p><strong>Wind Speed:</strong> ${windSpeed} m/s</p>
-      </div>
-    `;
+    //Creating a map object and specifying the DOM element for display
+    const map = new google.maps.Map(document.getElementById("map-container"), {
+        //Default amount of area shown on the map
+        zoom: 15,
+        //School's location is the center of the map
+        center: location, 
+    });
+
+    //Pinning the school's location on the map
+    new google.maps.Marker({
+    position: location,
+    map: map
+    });
 }
-
-const button = document.getElementById('fetch-weather-btn');
-button.addEventListener('click', function() {
-    getWeatherInfo();
-});
