@@ -40,3 +40,8 @@ async function InteractiveMap() {
     map: map
     });
 }
+
+//Event listener for button click to fetch map
+document.getElementById("fetch-map-btn").addEventListener("click", () => {
+    InteractiveMap();
+});
