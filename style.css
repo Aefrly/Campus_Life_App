@@ -87,10 +87,3 @@ img {
         align-items: center;
     }
 }
-
-/*Styling for map*/
-gmp-map {
-  height: 400px;
-  width: 100%;
-  margin-top: 20px;
-}
