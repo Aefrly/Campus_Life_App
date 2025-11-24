@@ -20,28 +20,25 @@ function showSlide(n) {
     void activeSlide.offsetWidth; // Trigger reflow
 }
 
-//JavaScript for API on map information 
-//Sending API requests using async/await
-async function InteractiveMap() {
-    //School's location coordinates
-    const location = {lat: 39.732189, lng: -90.2495076};
-
-    //Creating a map object and specifying the DOM element for display
-    const map = new google.maps.Map(document.getElementById("map-container"), {
-        //Default amount of area shown on the map
-        zoom: 15,
-        //School's location is the center of the map
-        center: location, 
+async function initMap() {
+    //  Request the needed libraries.
+    const [{ Map }, { AdvancedMarkerElement }] = await Promise.all([
+        google.maps.importLibrary("maps"),
+        google.maps.importLibrary("marker"),
+    ]);
+    // Get the gmp-map element.
+    const mapElement = document.querySelector("gmp-map");
+    // Get the inner map.
+    const innerMap = mapElement.innerMap;
+    // Set map options.
+    innerMap.setOptions({
+        mapTypeControl: false,
     });
-
-    //Pinning the school's location on the map
-    new google.maps.Marker({
-    position: location,
-    map: map
+    // Add a marker positioned at the map center (Uluru).
+    const marker = new AdvancedMarkerElement({
+        map: innerMap,
+        position: mapElement.center,
+        title: "Illinois College",
     });
 }
-
-//Event listener for button click to fetch map
-document.getElementById("fetch-map-btn").addEventListener("click", () => {
-    InteractiveMap();
-});
+initMap();
