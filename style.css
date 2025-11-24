@@ -87,3 +87,13 @@ img {
         align-items: center;
     }
 }
+
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
+gmp-map {
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+}
