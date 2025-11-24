@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Link to Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
@@ -9,9 +9,9 @@
     <!-- Link to CSS file -->
     <link rel="stylesheet" href="./style.css" />
     <title>My First Webpage</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Here is my header for the page and a little description-->
     <div class="container mt-4">
         <header class="text-center mb-4">
@@ -45,21 +45,17 @@
                     <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
                     <a class="next" onclick="changeSlide(1)">&#10095;</a>
                 </div>
-    </div>
 
                 <!--Putting interactive map for IC with Google Maps-->
-                <div class="d-flex justify-content-center mb-4 mt-5">
-                    <button id="fetch-map-btn" class="btn btn-primary">
-                        Interactive Map with IC in Jacksonville, IL
-                    </button>
-                </div> 
-                <div id="map-container" class="row">
-                    <!-- Output weather here -->
-                </div>
+                <gmp-map center="39.732189,-90.2495076" zoom="4" map-id="DEMO_MAP_ID">
+                    <div id="controls" slot="control-inline-start-block-start">
+                        <h3>My Google Maps Demo</h3>
+                    </div>
+                </gmp-map>
             </article>
 
             <!-- Here is my navigation center-->
-            <footer class="mt-5">>
+            <footer class="mt-5">
                 <nav class="d-flex justify-content-center gap-4">
                     <h4>Check out some other helpful resources!</h4>
                     <a href="./map.html" class="btn btn-success">College Map</a>
@@ -68,9 +64,11 @@
                     <a href="./policies.html" class="btn btn-success">Campus Policies</a>
                 </nav>
             </footer>
+        
+            <!-- Link to JavaScript-->
+            <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                ({key: "AIzaSyA6myHzS10YXdcazAFalmXvDkrYCp5cLc8", v: "weekly"});</script>
+            <script src="script.js"></script>
         </main>
     </div>
-    <!-- Link to JavaScript-->
-    <script src="script.js"></script>
-  </body>
-</html>
+</body>
