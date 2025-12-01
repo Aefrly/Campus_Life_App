@@ -13,6 +13,13 @@ img {
     margin: auto;
 }
 
+/*Style my image on majors_and_minors.html*/
+.img2 {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
 /*Styling for flex containers on map.html*/
 .blue_box {
     background-color: #00529e;
