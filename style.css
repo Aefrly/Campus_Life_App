@@ -13,6 +13,14 @@ img {
     margin: auto;
 }
 
+/*Styling for flex containers on map.html*/
+.blue_box {
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    margin: 20px;
+}
+
 /*Styling for buttons*/
 .btn {
     background-color: blue;
