@@ -15,7 +15,7 @@ img {
 
 /*Styling for flex containers on map.html*/
 .blue_box {
-    background-color: blue;
+    background-color: #00529e;
     color: white;
     padding: 15px;
     margin: 20px;
@@ -23,7 +23,7 @@ img {
 
 /*Styling for buttons*/
 .btn {
-    background-color: blue;
+    background-color: #00529e;
 }
 
 .btn:hover {
